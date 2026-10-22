@@ -2,9 +2,8 @@ pipeline {
     agent any
 
     tools {
-        // Must match the Maven tool name configured in Manage Jenkins -> Tools
-        jdk 'JDK17'
-        maven 'Maven3' 
+        maven 'Maven3' // Or 'Maven_3.9' depending on your Jenkins setup
+        jdk 'JDK17'    // Keep your JDK configuration here
     }
 
     stages {
@@ -16,19 +15,19 @@ pipeline {
 
         stage('Compile') {
             steps {
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
 
         stage('Package') {
             steps {
-                sh 'mvn package'
+                bat 'mvn package'
             }
         }
     }
