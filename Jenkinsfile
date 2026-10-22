@@ -3,7 +3,8 @@ pipeline {
 
     tools {
         // Must match the Maven tool name configured in Manage Jenkins -> Tools
-        maven 'Maven_3' 
+        jdk 'JDK17'
+        maven 'Maven3' 
     }
 
     stages {
